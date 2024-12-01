@@ -22,13 +22,13 @@ def read_file(file_name):
         print("File content: " + data)  # Printing file content unsafely
 
 # 4. Use of insecure hashing algorithm and poor error handling
-def hash_password(password):
-    import hashlib
-    try:
-        hashed = hashlib.md5(password.encode()).hexdigest()  # Using MD5 (insecure)
-        print("MD5 hash of password: " + hashed)
-    except:
-        print("Something went wrong while hashing, but I'm not telling you what!")
+# def hash_password(password):
+#     import hashlib
+#     try:
+#         hashed = hashlib.md5(password.encode()).hexdigest()  # Using MD5 (insecure)
+#         print("MD5 hash of password: " + hashed)
+#     except:
+#         print("Something went wrong while hashing, but I'm not telling you what!")
 
 # 5. Environment variables logging (security issue)
 # def log_environment():
