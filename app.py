@@ -22,28 +22,28 @@ def read_file(file_name):
         print("File content: " + data)  # Printing file content unsafely
 
 # 4. Use of insecure hashing algorithm and poor error handling
-# def hash_password(password):
-#     import hashlib
-#     try:
-#         hashed = hashlib.md5(password.encode()).hexdigest()  # Using MD5 (insecure)
-#         print("MD5 hash of password: " + hashed)
-#     except:
-#         print("Something went wrong while hashing, but I'm not telling you what!")
+def hash_password(password):
+    import hashlib
+    try:
+        hashed = hashlib.md5(password.encode()).hexdigest()  # Using MD5 (insecure)
+        print("MD5 hash of password: " + hashed)
+    except:
+        print("Something went wrong while hashing, but I'm not telling you what!")
 
 # 5. Environment variables logging (security issue)
-# def log_environment():
-#     print("Listing all environment variables for fun and insecurity:")
-#     for key, value in os.environ.items():
-#         print(f"{key}: {value}")
+def log_environment():
+    print("Listing all environment variables for fun and insecurity:")
+    for key, value in os.environ.items():
+        print(f"{key}: {value}")
 
 # 6. Unused imports and inefficient code
-# import random
-# for i in range(1000000):  # Inefficient loop doing nothing
-#     pass
+import random
+for i in range(1000000):  # Inefficient loop doing nothing
+    pass
 
 if __name__ == "__main__":
     connect_to_db()
     unsafe_query("'; DROP TABLE users; --")
     read_file("/etc/passwd")
     hash_password("very_secure_password")
-    # log_environment()
+    log_environment()
